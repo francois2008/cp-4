@@ -1,36 +1,20 @@
-import Counter from "../components/Counter";
-import logo from "../assets/logo.svg";
+import NavBar from "../components/commons/NavBar";
+import Header from "../components/commons/Header";
+import Log from "../components/commons/Log";
+import "../styles/home.css";
+import SearchBar from "../components/commons/SearchBar";
 
 export default function Home() {
   return (
-    <header className="App-header">
-      <img src={logo} className="App-logo" alt="logo" />
-      <p>Hello Vite + React !</p>
-
-      <Counter />
-
-      <p>
-        Edit <code>App.jsx</code>.
-      </p>
-      <p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-        {" | "}
-        <a
-          className="App-link"
-          href="https://vitejs.dev/guide/features.html"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Vite Docs
-        </a>
-      </p>
-    </header>
+    <div>
+      <header className="header">
+        <Header />
+        <div className="link">
+          <NavBar />
+          <Log />
+        </div>
+      </header>
+      <SearchBar />
+    </div>
   );
 }

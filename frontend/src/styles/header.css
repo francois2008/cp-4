@@ -1,0 +1,14 @@
+.logo-name {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+}
+.logo {
+  width: 5.5rem;
+  height: 5.5rem;
+  margin: 0.5rem;
+}
+.name {
+  margin: 0.5rem;
+}
