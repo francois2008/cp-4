@@ -6,17 +6,18 @@ CREATE TABLE `album` (
   `id_album` INT NOT NULL AUTO_INCREMENT,
   `title` VARCHAR(255) NOT NULL,
   `artist` VARCHAR(255) NOT NULL,
+  `image` VARCHAR(255) ,
   `released` INT NOT NULL,
   `category` varchar(255) not null,
   PRIMARY KEY (`id_album`));
 
-INSERT INTO `album` VALUES (1,'Enter The Wu-Tang','Wu-Tang Clan',1993,'hiphop'),
-(2,' Illmatic','Nas',1994, 'hiphop'),
-(3,'Let There Be Rock','AC/DC',1977,'rock'),
-(4,'Earth, Wind & Fire','Earth, Wind & Fire',1971,'funk'),
-(5,'Kill Em ','Metallica',1983, 'rock'),
-(6,'Soul Rebels','Bob Marley & The Wailers',1970,'Reggae'),
-(7,'Good Times','Kool And The Gang',1972,'funk');
+INSERT INTO `album` VALUES (1,'Enter The Wu-Tang','Wu-Tang Clan','https://i.discogs.com/JVtYto3PpCrhttx7V3aR09GKcOlPw4SE8RYrdxaWPTk/rs:fit/g:sm/q:90/h:600/w:600/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTE1Mzc0/OS0xMTg1MTM0MTM1/LmpwZWc.jpeg',1993,'hiphop'),
+(2,' Illmatic','Nas','https://i.discogs.com/ZIL05hcZo0Rkz8qMahZSNscLc_uRi5m1Hyiys_SDTtg/rs:fit/g:sm/q:90/h:490/w:500/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTM5MjYw/NC0xMTc3MDE5MjI4/LmpwZWc.jpeg',1994, 'hiphop'),
+(3,'Let There Be Rock','AC/DC','https://i.discogs.com/m4yyCDd7FaplvLA1kJSrgbs8LM983hsO2Dqj-RPII7Y/rs:fit/g:sm/q:90/h:600/w:600/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTgyMzQ3/Mi0xMzYxNjI0OTgw/LTg0MjAuanBlZw.jpeg',1977,'rock'),
+(4,'Earth, Wind & Fire','Earth, Wind & Fire','https://i.discogs.com/S8M2svFWtHWEgWEVEnSWlHis0POGHL-NQJLWwRPIddg/rs:fit/g:sm/q:90/h:600/w:594/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTk2Mjc2/OS0xNTc0NzMwNDM4/LTE4NTkuanBlZw.jpeg',1971,'funk'),
+(5,'Kill Em ','Metallica','https://i.discogs.com/CG9eMoJigCyFcBS2-OWGkCos4zLanCplIDgnzY1ycZA/rs:fit/g:sm/q:90/h:600/w:600/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTEyNTk0/ODEtMTI2NTk1Mzgz/My5qcGVn.jpeg',1983, 'rock'),
+(6,'Soul Rebels','Bob Marley & The Wailers','https://i.discogs.com/NYONv2tIFfJic7c9aVtZ5SHgKLX0CpaAfOnFs9J9rsQ/rs:fit/g:sm/q:90/h:600/w:596/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTE3NDMz/NDgtMTUyNDk5MTAy/MS0yMTI5LmpwZWc.jpeg',1970,'Reggae'),
+(7,'Good Times','Kool And The Gang','https://i.discogs.com/K_oK6jJob9F-brIgKCo-y4XQK162b3M-wZ8LnMV0arE/rs:fit/g:sm/q:90/h:600/w:596/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTMyNjk2/MC0xMzQ5MDkxMzI4/LTU5NzcuanBlZw.jpeg',1972,'funk');
 
 DROP TABLE IF EXISTS `track`;
 CREATE TABLE `track` (
@@ -45,11 +46,21 @@ CREATE TABLE `user` (
   `alias` VARCHAR(255) NOT NULL,
   `password` varchar(255) not null,
   PRIMARY KEY (`id_user`));
-
+ 
   INSERT INTO `user` VALUES 
-  (1,'francois','paco','wildcode22');
+  ('1','francois','paco','wildcode22');
 
-SELECT id_album, title, artist, released, category
-FROM album
-INNER JOIN user
-ON user.id_user = album.id_user
+DROP TABLE IF EXISTS `favourite`;
+CREATE TABLE `favourite` (
+  `id` INT NOT NULL AUTO_INCREMENT,
+  -- `id_user` INT NOT NULL AUTO_INCREMENT,
+  `album_id` INT NOT NULL,
+   PRIMARY KEY (`id`),
+  FOREIGN KEY (`album_id`)
+    REFERENCES `album` (`id_album`));
+ 
+
+--  SELECT id_album, title, artist, released, category
+--  FROM album
+--  INNER JOIN user
+--  ON user.id_user = album.id_user;

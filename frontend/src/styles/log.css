@@ -1,5 +1,9 @@
 .log {
-  margin-top: 0.25rem;
+  margin-top: 0.5rem;
   list-style-type: none;
   padding-left: 1rem;
+  margin-inline-start: 65%;
+}
+.list-log {
+  margin-top: 0.3rem;
 }

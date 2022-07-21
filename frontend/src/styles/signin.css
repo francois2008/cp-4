@@ -1,0 +1,32 @@
+.form-signin {
+  display: flex;
+  flex-direction: column;
+  margin-left: 1rem;
+}
+.label-signin {
+  margin: 0.8rem 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.input-signin {
+  margin: 1rem;
+  border: solid black 2px;
+  border-radius: 10px;
+  width: 12rem;
+  height: 1.5rem;
+}
+.input-valid {
+  width: 65%;
+  height: 2rem;
+  font-size: 1.3rem;
+  border: solid blue 2px;
+  border-radius: 10px;
+  margin-left: 17.5%;
+}
+h3 {
+  font-size: 2rem;
+  color: blue;
+  width: 35%;
+  margin-inline-start: 32.5%;
+}

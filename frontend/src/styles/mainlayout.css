@@ -1,0 +1,8 @@
+.header {
+  border: solid blue 4px;
+  border-radius: 15px;
+}
+.link {
+  display: flex;
+  flex-direction: row;
+}

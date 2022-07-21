@@ -1,0 +1,41 @@
+.card-vinyl {
+
+  background-color: rgb(148, 148, 141);
+  border-radius: 10px;
+  max-width: 98%;
+  min-height: 400px;
+  margin: 2rem 0.2rem 0 0.2rem;
+}
+.data-up {
+  display: flex;
+  flex-direction: row;
+  gap: 3rem;
+  margin-left: 2rem;
+}
+.data-down {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 3rem;
+  margin-left: 2rem;
+}
+.photo-vinyl {
+  width: 15rem;
+  margin-left: 4rem;
+  border-radius: 5px;
+}
+.star {
+  width: 2.5rem;
+  height: 2.5rem;
+border-radius: 40px;
+}
+.fav-button {
+  width: 2.5rem;
+  height: 2.5rem;
+  background-color: transparent;
+  border: transparent;
+}
+h2 {
+  font-size: 1.3rem;
+  margin: 0.5rem;
+}

@@ -6,13 +6,13 @@ function NavBar() {
   return (
     <nav>
       <ul className="navbar">
-        <li>
+        <li className="list-nav">
           <Link to="/">HOME</Link>
         </li>
-        <li>
+        <li className="list-nav">
           <Link to="/playlist">PLAYLIST</Link>
         </li>
-        <li>
+        <li className="list-nav">
           <Link to="/myaccount">MY ACCOUNT</Link>
         </li>
       </ul>
