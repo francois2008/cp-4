@@ -5,8 +5,10 @@ import Whitestar from "../../assets/whitestar.jpg";
 import "../../styles/cardvinyl.css";
 
 function CardVinyl({ vinyl }) {
-  const [fav, setFav] = useState(true);
-  const URLBDD = `${import.meta.env.VITE_BACKEND_URL}/favourite`;
+  const [fav, setFav] = useState(false);
+  const URLBDD = `${import.meta.env.VITE_BACKEND_URL}/favourite/${
+    vinyl.id_album
+  }`;
 
   const handleClickFavourite = () => {
     if (!fav) {

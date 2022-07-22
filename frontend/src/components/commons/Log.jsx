@@ -4,7 +4,7 @@ import "../../styles/log.css";
 
 function Log() {
   return (
-    <div>
+    <nav>
       <ul className="log">
         <li className="list-log">
           <Link to="/signin">SIGN IN</Link>
@@ -16,7 +16,7 @@ function Log() {
           <Link to="/logout">LOG OUT</Link>
         </li>
       </ul>
-    </div>
+    </nav>
   );
 }
 

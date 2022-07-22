@@ -3,17 +3,17 @@ const AbstractManager = require("./AbstractManager");
 class FavouriteManager extends AbstractManager {
   static table = "favourite";
 
-  insert(favourite) {
+  insert(albumId) {
     return this.connection.query(
-      `insert into ${FavouriteManager.table} (id) values (? )`,
-      [favourite.id]
+      `insert into ${FavouriteManager.table} (album_id) values (?)`,
+      [albumId]
     );
   }
 
-  update(id, favourite) {
+  findFav() {
     return this.connection.query(
-      `update ${FavouriteManager.table} set ? where id = ?`,
-      [favourite, id]
+      `select * from album inner join ${FavouriteManager.table} on album.id_album = ${FavouriteManager.table}.album_id`,
+      []
     );
   }
 }

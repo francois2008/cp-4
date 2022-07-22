@@ -4,6 +4,7 @@ import PlayList from "./pages/PlayList";
 import MyAccount from "./pages/MyAccount";
 import SignIn from "./pages/SignIn";
 import LogIn from "./pages/LogIn";
+import LogOut from "./pages/LogOut";
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
           <Route path="/myaccount" element={<MyAccount />} />
           <Route path="/signin" element={<SignIn />} />
           <Route path="/login" element={<LogIn />} />
+          <Route path="/logout" element={<LogOut />} />
         </Routes>
       </Router>
     </div>

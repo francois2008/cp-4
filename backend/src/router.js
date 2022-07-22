@@ -21,7 +21,7 @@ router.get("/albums/:category", AlbumController.getOne);
 // router.post("/users", UserController.add);
 
 router.get("/favourite", FavouriteController.getAll);
-router.post("/favourite", FavouriteController.create);
-// router.delete("/favourite", FavouriteController.delete);
+router.post("/favourite/:id", FavouriteController.create);
+// router.delete("/favourite/", FavouriteController.delete);
 
 module.exports = router;

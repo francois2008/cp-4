@@ -2,12 +2,12 @@ const models = require("../models");
 
 class FavouriteController {
   static create = (req, res) => {
-    const favourite = req.body;
+    const albumId = req.params.id;
 
     models.favourite
-      .insert(favourite)
+      .insert(albumId)
       .then(([result]) => {
-        res.status(201).send({ ...favourite, id: result.insertId });
+        res.status(201).send({ ...albumId, id: result.insertId });
       })
       .catch((err) => {
         console.error(err);
@@ -17,7 +17,7 @@ class FavouriteController {
 
   static getAll = (req, res) => {
     models.favourite
-      .findAll()
+      .findFav()
       .then(([rows]) => {
         res.send(rows);
       })
